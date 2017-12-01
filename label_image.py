@@ -1,3 +1,7 @@
+"""
+Applies the trained network to label an image.
+Author: Landon Wiedenman
+"""
 import tensorflow as tf
 import sys
 
