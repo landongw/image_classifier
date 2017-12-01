@@ -11,10 +11,10 @@ image_path = sys.argv[1]
 image_data = tf.gfile.FastGFile(image_path, 'rb').read()
 
 # Loads label file, strips off carriage return
-label_lines = [line.rstrip() for line in tf.gfile.GFile("/Users/landonwiedenman/Documents/development_projects/landongw/tensorflow_work/retrained_labels.txt")]
+label_lines = [line.rstrip() for line in tf.gfile.GFile("/Users/landonwiedenman/Documents/development_projects/landongw/tensorflow_work/image_classifier/retrained_labels.txt")]
 
 # Unpersists graph from file
-with tf.gfile.FastGFile("/Users/landonwiedenman/Documents/development_projects/landongw/tensorflow_work/retrained_graph.pb", 'rb') as f:
+with tf.gfile.FastGFile("/Users/landonwiedenman/Documents/development_projects/landongw/tensorflow_work/image_classifier/retrained_graph.pb", 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(graph_def, name='')
